@@ -238,17 +238,17 @@ if __name__ == "__main__":
     # run_divisive_analysis(main_df,base_path=base_path)
     # run_agglomerative_analysis(main_df,base_path=base_path)
 
-    #flow 2 where we run clustering after scaling of columns 
-    base_path = os.path.join(os.getcwd(),"Scaled_Cluster_Analysis")
-    filepath = os.path.join(os.getcwd(),'Data Files','Climate_Data_Scaled.csv')
-    main_df = pd.read_csv(filepath)
-    #flow 1 where we run clustering without any pre-processing
-    run_kmeans_analysis(main_df,base_path=base_path)
-    run_dbscan_analysis(main_df,base_path=base_path)
-    run_gmm_analysis(main_df,base_path=base_path)
-    run_spectral_analysis(main_df,base_path=base_path)
-    run_divisive_analysis(main_df,base_path=base_path)
-    run_agglomerative_analysis(main_df,base_path=base_path)
+    # #flow 2 where we run clustering after scaling of columns 
+    # base_path = os.path.join(os.getcwd(),"Scaled_Cluster_Analysis")
+    # filepath = os.path.join(os.getcwd(),'Data Files','Climate_Data_Scaled.csv')
+    # main_df = pd.read_csv(filepath)
+    # #flow 1 where we run clustering without any pre-processing
+    # run_kmeans_analysis(main_df,base_path=base_path)
+    # run_dbscan_analysis(main_df,base_path=base_path)
+    # run_gmm_analysis(main_df,base_path=base_path)
+    # run_spectral_analysis(main_df,base_path=base_path)
+    # run_divisive_analysis(main_df,base_path=base_path)
+    # run_agglomerative_analysis(main_df,base_path=base_path)
 
 
     #flow 3 where we run it with scaled and removed columns
@@ -262,4 +262,13 @@ if __name__ == "__main__":
     run_divisive_analysis(main_df,base_path=base_path)
     run_agglomerative_analysis(main_df,base_path=base_path)
 
-    #flow 4 where we run with check PCA
+    #flow 4 where we run with check PCA scaled and removed
+    base_path = os.path.join(os.getcwd(),"PCA_Scaled_Removed_Cluster_Analysis")
+    filepath = os.path.join(os.getcwd(),'Data Files','Climate_Data_Scaled_Removed_PCA.csv')
+    main_df = pd.read_csv(filepath)
+    run_kmeans_analysis(main_df,base_path=base_path)
+    run_dbscan_analysis(main_df,base_path=base_path)
+    run_gmm_analysis(main_df,base_path=base_path)
+    run_spectral_analysis(main_df,base_path=base_path)
+    run_divisive_analysis(main_df,base_path=base_path)
+    run_agglomerative_analysis(main_df,base_path=base_path)

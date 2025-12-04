@@ -8,17 +8,7 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
 from sklearn.decomposition import PCA
 from Cluster_Preprocessing import z_score_scaling
 from utils_dataframe import create_dataframe
-# ==========================================
-# 1. DATA PREPARATION FUNCTIONS
-# ==========================================
-
-
-
-
-import matplotlib.pyplot as plt
-import os
 import math
-import pandas as pd
 
 def create_plots(df: pd.DataFrame, folderpath: str, filename: str = "all_histograms.pdf"):    
     if not os.path.exists(folderpath):

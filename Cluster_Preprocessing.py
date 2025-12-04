@@ -42,7 +42,7 @@ def keep_selected_columns(df: pd.DataFrame,columns_to_keep:list) -> pd.DataFrame
     return df_reduced
 
 
-def perform_pca(df_scaled: pd.DataFrame, n_components: int = 2) -> pd.DataFrame:
+def perform_pca(df_scaled: pd.DataFrame, n_components: int = 6) -> pd.DataFrame:
     """
     Applies PCA to reduced the dimensions of the scaled data.
     Returns the transformed dataframe (PC1, PC2, etc.).
@@ -73,7 +73,8 @@ def perform_pca(df_scaled: pd.DataFrame, n_components: int = 2) -> pd.DataFrame:
 # scaled_df.to_csv(os.path.join(os.getcwd(),'Data Files','Climate_Data_Scaled_Removed.csv'))
 
 
-#reduced_df = keep_selected_columns(main_df)
-scaled_df = z_score_scaling(main_df)
+reduced_df = keep_selected_columns(main_df,columns_to_keep=columns_to_keep)
+scaled_df = z_score_scaling(reduced_df)
+df_PCA = perform_pca(scaled_df)
 
-scaled_df.to_csv(os.path.join(os.getcwd(),'Data Files','Climate_Data_Scaled.csv'))
+df_PCA.to_csv(os.path.join(os.getcwd(),'Data Files','Climate_Data_Scaled_Removed_PCA.csv'))
